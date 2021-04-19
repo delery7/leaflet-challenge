@@ -18,17 +18,9 @@ function createFeatures(earthquakeData) {
       "</h3><hr><p>" + "Magnitude: " + (feature.properties.mag) + "</p>" +
       "</h3><hr><p>" + "Depth: " + (feature.geometry.coordinates[2]) + "</p>" +
       "</h3><hr><p>" + new Date(feature.properties.time) + "</p>"
-      // ,
-      //Could not figure out how to size or change color from bindPopup
-      // {
-      //   autoPanPaddingTopLeft: feature.properties.mag
-      // }
       );
       
   }
-
-
-
 
   // Create a GeoJSON layer containing the features array on the earthquakeData object
   // Run the onEachFeature function once for each piece of data in the array
@@ -66,6 +58,7 @@ function createMap(earthquakes) {
     layers: [streetmap, earthquakes]
   });
 
+// Attempt to add an icon with fixed size
 //   // Set the icon size by maginitude values
 //   var mapIcon = L.icon({
 //        iconSize:     [38, 95], // size of the icon
